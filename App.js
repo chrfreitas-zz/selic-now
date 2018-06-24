@@ -6,7 +6,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Selic</Text>
-        <Text>6,39</Text>
+        <Text>6,39%</Text>
       </View>
     );
   }
