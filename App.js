@@ -1,32 +1,15 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { getLastItem } from './Api';
+import Selic from './src/components/Selic';
 
 export default class App extends Component {
-  state = {
-    selic: {},
-  }
-
-  componentDidMount() {
-    getLastItem().then(selic => {
-      this.setState({
-        selic,
-      })
-    });
-   
-    //#fedf00
-    //#009b3a
-  }
-
-
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.strip1}/>
         <View style={styles.strip2}/>
-        <Text style={styles.title}>Selic</Text>
-        <Text style={styles.value}>{ this.state.selic.valor }</Text>
+        <Selic />
       </View>
     );
   }
@@ -38,15 +21,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#002776',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    color: '#fff',
-    fontSize: 30,
-    marginBottom: 20
-  },
-  value: {
-    color: '#fff',
-    fontSize: 70
   },
   strip1: {
     position: 'absolute',
